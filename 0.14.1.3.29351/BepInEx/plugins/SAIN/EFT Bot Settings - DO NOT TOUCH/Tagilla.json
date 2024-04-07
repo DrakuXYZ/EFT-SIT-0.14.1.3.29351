@@ -144,8 +144,10 @@
         "CHECK_HEAD_ANY_DIST": true,
         "MIDDLE_DIST_CAN_SHOOT_HEAD": false,
         "CAN_USE_LIGHT": true,
+        "SHOOT_FROM_EYES": true,
         "ANGLE_FOR_GETUP": 60.0,
-        "MINIMUM_VISIBLE_DIST": 40.0
+        "MINIMUM_VISIBLE_DIST": 40.0,
+        "CAN_USE_STRIBOSCOPE": -1.0
       },
       "Shoot": {
         "RECOIL_TIME_NORMALIZE": 1.0,
@@ -191,6 +193,8 @@
         "BLOCK_PERIOD_WHEN_LAY": 1.25,
         "CHANGE_WEAPON_PERIOD": 1.5,
         "USE_MELEE_COMBOS": true,
+        "MELEE_RESET_HIT_TIME": 0.5,
+        "MELEE_STOP_MOVE_DISTANCE": 0.0,
         "VALIDATE_MALFUNCTION_CHANCE": 100,
         "REPAIR_MALFUNCTION_IMMEDIATE_CHANCE": 25,
         "DELAY_BEFORE_EXAMINE_MALFUNCTION": 0.5,
@@ -208,7 +212,8 @@
         "LAST_SEEN_TIME_TO_START_SUPPRESS_STATIONARY_AGS": 20.0,
         "STATIONARY_GRENADE_MIN_DIST_TO_TAKE": 20.0,
         "STATIONARY_SIMPLE_MIN_DIST_TO_TAKE": 5.0,
-        "NO_OFFSET_SHOOTING_FROM_PLAYER": false
+        "NO_OFFSET_SHOOTING_FROM_PLAYER": false,
+        "ALTERNATIVE_KNIFE_KICK": false
       },
       "Move": {
         "BASE_ROTATE_SPEED": 270.0,
@@ -309,7 +314,8 @@
         "FLASH_HEARING": 1.0,
         "FLASH_ACCURATY": 1.6,
         "FLASH_LAY_CHANCE": 1.0,
-        "STUN_HEARING": 0.01
+        "STUN_HEARING": 0.01,
+        "INVISIBLE_ON_CLIENT": false
       },
       "Cover": {
         "RETURN_TO_ATTACK_AFTER_AMBUSH_MIN": 20.0,
@@ -401,6 +407,7 @@
         "RESERVE_OUT_TIME": 60.0,
         "CLOSE_TO_SELECT_RESERV_WAY": 25.0,
         "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER": 5.0,
+        "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER_ALLY": 4.0,
         "CAN_CHOOSE_RESERV": false,
         "USE_ONLY_RESERV": false,
         "HEAD_PERIOD_TIME": 13.0,
@@ -423,9 +430,9 @@
         "USE_SURGIAL_KIT_OVER_THE_BODY_CAHNCE_100": 50.0,
         "USE_SURGIAL_KIT_OVER_THE_BODY_SECOND_CAHNCE_100": 50.0,
         "FOLLOWER_START_MOVE_DELAY": 0.0,
-        "USE_CHACHE_WAYS": false,
+        "USE_CHACHE_WAYS": true,
         "ITEMS_TO_DROP": "",
-        "SPRINT_BETWEEN_CACHED_POINTS": 150.0,
+        "SPRINT_BETWEEN_CACHED_POINTS": 55.0,
         "CHECK_MAGAZIN_PERIOD": 30.0,
         "EAT_DRINK_PERIOD": 30.0,
         "WATCH_SECOND_WEAPON_PERIOD": 30.0,
@@ -485,10 +492,7 @@
           "assault"
         ],
         "WARN_BOT_TYPES": [],
-        "ENEMY_BOT_TYPES": [
-          "sptBear",
-          "sptUsec"
-        ],
+        "ENEMY_BOT_TYPES": [],
         "REVENGE_BOT_TYPES": [
           "assault",
           "marksman",
@@ -509,10 +513,16 @@
           "bossTagilla",
           "followerTagilla",
           "bossBoar",
+          "bossKolontay",
+          "followerKolontayAssault",
+          "followerKolontaySecurity",
           "bossBoarSniper",
           "followerBoar",
+          "followerBoarClose1",
+          "followerBoarClose2",
           "gifter"
         ],
+        "FOLLOWER_AND_BOSS_WARN_EQUAL_PRIORITY": false,
         "MAX_AGGRO_BOT_DIST_UPPER_LIMIT": 400.0,
         "MAX_AGGRO_BOT_DIST_SQR_UPPER_LIMIT": 40000.0,
         "MAX_AGGRO_BOT_DIST_SQR": 10000.0,
@@ -595,19 +605,37 @@
         "CAN_TALK": true,
         "ACTIVE_FORCE_ATTACK_EVENTS": true,
         "ACTIVE_FOLLOW_PLAYER_EVENTS": true,
-        "MAY_BE_CALLED_FOR_HELP": false
+        "MAY_BE_CALLED_FOR_HELP": false,
+        "GIFTER_ADDITIONAL_GIFTS": 0,
+        "ANGLE_TO_SHOOT_BTR": 5.0,
+        "ROTATION_SPEED_BTR": 2.0,
+        "IGNORE_ANOTHER_BOTS_BEING_HIT": false,
+        "AVOID_BTR_RADIUS_SQR": 1600.0,
+        "SNIPER_FIRE_IMMUNE": false,
+        "USE_ADD_TO_ENEMY_VALIDATION": false,
+        "VALID_REASONS_TO_ADD_ENEMY": null
       },
       "Boss": {
         "BOSS_DIST_TO_WARNING": 15.0,
+        "BOSS_DIST_TO_WARNING_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_USEC": 15.0,
+        "BOSS_DIST_TO_WARNING_USEC_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_USEC": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_USEC_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_BEAR": 15.0,
+        "BOSS_DIST_TO_WARNING_BEAR_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_BEAR": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_BEAR_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_OUT": 20.0,
+        "BOSS_DIST_TO_WARNING_OUT_ALLY": 5.0,
         "BOSS_DIST_TO_WARNING_OUT_SQRT": 400.0,
+        "BOSS_DIST_TO_WARNING_OUT_SQRT_ALLY": 25.0,
         "BOSS_DIST_TO_SHOOT": 5.0,
+        "BOSS_DIST_TO_SHOOT_ALLY": 1.0,
         "BOSS_DIST_TO_SHOOT_SQRT": 25.0,
+        "BOSS_DIST_TO_SHOOT_SQRT_ALLY": 1.0,
         "CHANCE_TO_SEND_GRENADE_100": 100.0,
         "MAX_DIST_COVER_BOSS": 25.0,
         "MAX_DIST_COVER_BOSS_SQRT": 625.0,
@@ -706,13 +734,15 @@
         "TOTAL_TIME_KILL_AFTER_WARN": 5.0,
         "COME_INSIDE_TIMES": 5,
         "BOSS_DIST_TO_WARNING_OUT_DELTA": 15.0,
+        "BOSS_DIST_TO_WARNING_OUT_DELTA_ALLY": 2.0,
         "TOTAL_TIME_KILL_AFTER_START_WARN": 15.0,
         "BIG_PIPE_ARTILLERY_COUNT": 1,
         "BOSS_ZRYACHIY_TELEPORT_CHANCE": 25.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_TELEPORT": 150.0,
         "BOSS_ZRYACHIY_TELEPORT_CAN_SECONDS_FROM_START": 99999.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_NEXT_COVER": 3.0,
-        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025
+        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025,
+        "NOT_ADD_TO_ENEMY_ON_KILLS": false
       },
       "Core": {
         "VisibleAngle": 180.0,
@@ -907,8 +937,10 @@
         "CHECK_HEAD_ANY_DIST": true,
         "MIDDLE_DIST_CAN_SHOOT_HEAD": false,
         "CAN_USE_LIGHT": true,
+        "SHOOT_FROM_EYES": true,
         "ANGLE_FOR_GETUP": 60.0,
-        "MINIMUM_VISIBLE_DIST": 40.0
+        "MINIMUM_VISIBLE_DIST": 40.0,
+        "CAN_USE_STRIBOSCOPE": -1.0
       },
       "Shoot": {
         "RECOIL_TIME_NORMALIZE": 1.0,
@@ -954,6 +986,8 @@
         "BLOCK_PERIOD_WHEN_LAY": 1.25,
         "CHANGE_WEAPON_PERIOD": 1.5,
         "USE_MELEE_COMBOS": true,
+        "MELEE_RESET_HIT_TIME": 0.5,
+        "MELEE_STOP_MOVE_DISTANCE": 0.0,
         "VALIDATE_MALFUNCTION_CHANCE": 100,
         "REPAIR_MALFUNCTION_IMMEDIATE_CHANCE": 25,
         "DELAY_BEFORE_EXAMINE_MALFUNCTION": 0.5,
@@ -971,7 +1005,8 @@
         "LAST_SEEN_TIME_TO_START_SUPPRESS_STATIONARY_AGS": 20.0,
         "STATIONARY_GRENADE_MIN_DIST_TO_TAKE": 20.0,
         "STATIONARY_SIMPLE_MIN_DIST_TO_TAKE": 5.0,
-        "NO_OFFSET_SHOOTING_FROM_PLAYER": false
+        "NO_OFFSET_SHOOTING_FROM_PLAYER": false,
+        "ALTERNATIVE_KNIFE_KICK": false
       },
       "Move": {
         "BASE_ROTATE_SPEED": 270.0,
@@ -1072,7 +1107,8 @@
         "FLASH_HEARING": 1.0,
         "FLASH_ACCURATY": 1.6,
         "FLASH_LAY_CHANCE": 1.0,
-        "STUN_HEARING": 0.01
+        "STUN_HEARING": 0.01,
+        "INVISIBLE_ON_CLIENT": false
       },
       "Cover": {
         "RETURN_TO_ATTACK_AFTER_AMBUSH_MIN": 20.0,
@@ -1164,6 +1200,7 @@
         "RESERVE_OUT_TIME": 60.0,
         "CLOSE_TO_SELECT_RESERV_WAY": 25.0,
         "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER": 5.0,
+        "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER_ALLY": 4.0,
         "CAN_CHOOSE_RESERV": false,
         "USE_ONLY_RESERV": false,
         "HEAD_PERIOD_TIME": 13.0,
@@ -1186,9 +1223,9 @@
         "USE_SURGIAL_KIT_OVER_THE_BODY_CAHNCE_100": 50.0,
         "USE_SURGIAL_KIT_OVER_THE_BODY_SECOND_CAHNCE_100": 50.0,
         "FOLLOWER_START_MOVE_DELAY": 0.0,
-        "USE_CHACHE_WAYS": false,
+        "USE_CHACHE_WAYS": true,
         "ITEMS_TO_DROP": "",
-        "SPRINT_BETWEEN_CACHED_POINTS": 150.0,
+        "SPRINT_BETWEEN_CACHED_POINTS": 55.0,
         "CHECK_MAGAZIN_PERIOD": 30.0,
         "EAT_DRINK_PERIOD": 30.0,
         "WATCH_SECOND_WEAPON_PERIOD": 30.0,
@@ -1248,10 +1285,7 @@
           "assault"
         ],
         "WARN_BOT_TYPES": [],
-        "ENEMY_BOT_TYPES": [
-          "sptBear",
-          "sptUsec"
-        ],
+        "ENEMY_BOT_TYPES": [],
         "REVENGE_BOT_TYPES": [
           "assault",
           "marksman",
@@ -1272,10 +1306,16 @@
           "bossTagilla",
           "followerTagilla",
           "bossBoar",
+          "bossKolontay",
+          "followerKolontayAssault",
+          "followerKolontaySecurity",
           "bossBoarSniper",
           "followerBoar",
+          "followerBoarClose1",
+          "followerBoarClose2",
           "gifter"
         ],
+        "FOLLOWER_AND_BOSS_WARN_EQUAL_PRIORITY": false,
         "MAX_AGGRO_BOT_DIST_UPPER_LIMIT": 400.0,
         "MAX_AGGRO_BOT_DIST_SQR_UPPER_LIMIT": 40000.0,
         "MAX_AGGRO_BOT_DIST_SQR": 10000.0,
@@ -1358,19 +1398,37 @@
         "CAN_TALK": true,
         "ACTIVE_FORCE_ATTACK_EVENTS": true,
         "ACTIVE_FOLLOW_PLAYER_EVENTS": true,
-        "MAY_BE_CALLED_FOR_HELP": false
+        "MAY_BE_CALLED_FOR_HELP": false,
+        "GIFTER_ADDITIONAL_GIFTS": 0,
+        "ANGLE_TO_SHOOT_BTR": 5.0,
+        "ROTATION_SPEED_BTR": 2.0,
+        "IGNORE_ANOTHER_BOTS_BEING_HIT": false,
+        "AVOID_BTR_RADIUS_SQR": 1600.0,
+        "SNIPER_FIRE_IMMUNE": false,
+        "USE_ADD_TO_ENEMY_VALIDATION": false,
+        "VALID_REASONS_TO_ADD_ENEMY": null
       },
       "Boss": {
         "BOSS_DIST_TO_WARNING": 15.0,
+        "BOSS_DIST_TO_WARNING_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_USEC": 15.0,
+        "BOSS_DIST_TO_WARNING_USEC_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_USEC": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_USEC_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_BEAR": 15.0,
+        "BOSS_DIST_TO_WARNING_BEAR_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_BEAR": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_BEAR_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_OUT": 20.0,
+        "BOSS_DIST_TO_WARNING_OUT_ALLY": 5.0,
         "BOSS_DIST_TO_WARNING_OUT_SQRT": 400.0,
+        "BOSS_DIST_TO_WARNING_OUT_SQRT_ALLY": 25.0,
         "BOSS_DIST_TO_SHOOT": 5.0,
+        "BOSS_DIST_TO_SHOOT_ALLY": 1.0,
         "BOSS_DIST_TO_SHOOT_SQRT": 25.0,
+        "BOSS_DIST_TO_SHOOT_SQRT_ALLY": 1.0,
         "CHANCE_TO_SEND_GRENADE_100": 100.0,
         "MAX_DIST_COVER_BOSS": 25.0,
         "MAX_DIST_COVER_BOSS_SQRT": 625.0,
@@ -1469,13 +1527,15 @@
         "TOTAL_TIME_KILL_AFTER_WARN": 5.0,
         "COME_INSIDE_TIMES": 5,
         "BOSS_DIST_TO_WARNING_OUT_DELTA": 15.0,
+        "BOSS_DIST_TO_WARNING_OUT_DELTA_ALLY": 2.0,
         "TOTAL_TIME_KILL_AFTER_START_WARN": 15.0,
         "BIG_PIPE_ARTILLERY_COUNT": 1,
         "BOSS_ZRYACHIY_TELEPORT_CHANCE": 25.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_TELEPORT": 150.0,
         "BOSS_ZRYACHIY_TELEPORT_CAN_SECONDS_FROM_START": 99999.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_NEXT_COVER": 3.0,
-        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025
+        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025,
+        "NOT_ADD_TO_ENEMY_ON_KILLS": false
       },
       "Core": {
         "VisibleAngle": 180.0,
@@ -1670,8 +1730,10 @@
         "CHECK_HEAD_ANY_DIST": true,
         "MIDDLE_DIST_CAN_SHOOT_HEAD": false,
         "CAN_USE_LIGHT": true,
+        "SHOOT_FROM_EYES": true,
         "ANGLE_FOR_GETUP": 60.0,
-        "MINIMUM_VISIBLE_DIST": 40.0
+        "MINIMUM_VISIBLE_DIST": 40.0,
+        "CAN_USE_STRIBOSCOPE": -1.0
       },
       "Shoot": {
         "RECOIL_TIME_NORMALIZE": 1.0,
@@ -1717,6 +1779,8 @@
         "BLOCK_PERIOD_WHEN_LAY": 1.25,
         "CHANGE_WEAPON_PERIOD": 1.5,
         "USE_MELEE_COMBOS": true,
+        "MELEE_RESET_HIT_TIME": 0.5,
+        "MELEE_STOP_MOVE_DISTANCE": 0.0,
         "VALIDATE_MALFUNCTION_CHANCE": 100,
         "REPAIR_MALFUNCTION_IMMEDIATE_CHANCE": 25,
         "DELAY_BEFORE_EXAMINE_MALFUNCTION": 0.5,
@@ -1734,7 +1798,8 @@
         "LAST_SEEN_TIME_TO_START_SUPPRESS_STATIONARY_AGS": 20.0,
         "STATIONARY_GRENADE_MIN_DIST_TO_TAKE": 20.0,
         "STATIONARY_SIMPLE_MIN_DIST_TO_TAKE": 5.0,
-        "NO_OFFSET_SHOOTING_FROM_PLAYER": false
+        "NO_OFFSET_SHOOTING_FROM_PLAYER": false,
+        "ALTERNATIVE_KNIFE_KICK": false
       },
       "Move": {
         "BASE_ROTATE_SPEED": 270.0,
@@ -1835,7 +1900,8 @@
         "FLASH_HEARING": 1.0,
         "FLASH_ACCURATY": 1.6,
         "FLASH_LAY_CHANCE": 1.0,
-        "STUN_HEARING": 0.01
+        "STUN_HEARING": 0.01,
+        "INVISIBLE_ON_CLIENT": false
       },
       "Cover": {
         "RETURN_TO_ATTACK_AFTER_AMBUSH_MIN": 20.0,
@@ -1927,6 +1993,7 @@
         "RESERVE_OUT_TIME": 60.0,
         "CLOSE_TO_SELECT_RESERV_WAY": 25.0,
         "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER": 5.0,
+        "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER_ALLY": 4.0,
         "CAN_CHOOSE_RESERV": false,
         "USE_ONLY_RESERV": false,
         "HEAD_PERIOD_TIME": 13.0,
@@ -1949,9 +2016,9 @@
         "USE_SURGIAL_KIT_OVER_THE_BODY_CAHNCE_100": 50.0,
         "USE_SURGIAL_KIT_OVER_THE_BODY_SECOND_CAHNCE_100": 50.0,
         "FOLLOWER_START_MOVE_DELAY": 0.0,
-        "USE_CHACHE_WAYS": false,
+        "USE_CHACHE_WAYS": true,
         "ITEMS_TO_DROP": "",
-        "SPRINT_BETWEEN_CACHED_POINTS": 150.0,
+        "SPRINT_BETWEEN_CACHED_POINTS": 55.0,
         "CHECK_MAGAZIN_PERIOD": 30.0,
         "EAT_DRINK_PERIOD": 30.0,
         "WATCH_SECOND_WEAPON_PERIOD": 30.0,
@@ -2011,10 +2078,7 @@
           "assault"
         ],
         "WARN_BOT_TYPES": [],
-        "ENEMY_BOT_TYPES": [
-          "sptBear",
-          "sptUsec"
-        ],
+        "ENEMY_BOT_TYPES": [],
         "REVENGE_BOT_TYPES": [
           "assault",
           "marksman",
@@ -2035,10 +2099,16 @@
           "bossTagilla",
           "followerTagilla",
           "bossBoar",
+          "bossKolontay",
+          "followerKolontayAssault",
+          "followerKolontaySecurity",
           "bossBoarSniper",
           "followerBoar",
+          "followerBoarClose1",
+          "followerBoarClose2",
           "gifter"
         ],
+        "FOLLOWER_AND_BOSS_WARN_EQUAL_PRIORITY": false,
         "MAX_AGGRO_BOT_DIST_UPPER_LIMIT": 400.0,
         "MAX_AGGRO_BOT_DIST_SQR_UPPER_LIMIT": 40000.0,
         "MAX_AGGRO_BOT_DIST_SQR": 10000.0,
@@ -2121,19 +2191,37 @@
         "CAN_TALK": true,
         "ACTIVE_FORCE_ATTACK_EVENTS": true,
         "ACTIVE_FOLLOW_PLAYER_EVENTS": true,
-        "MAY_BE_CALLED_FOR_HELP": false
+        "MAY_BE_CALLED_FOR_HELP": false,
+        "GIFTER_ADDITIONAL_GIFTS": 0,
+        "ANGLE_TO_SHOOT_BTR": 5.0,
+        "ROTATION_SPEED_BTR": 2.0,
+        "IGNORE_ANOTHER_BOTS_BEING_HIT": false,
+        "AVOID_BTR_RADIUS_SQR": 1600.0,
+        "SNIPER_FIRE_IMMUNE": false,
+        "USE_ADD_TO_ENEMY_VALIDATION": false,
+        "VALID_REASONS_TO_ADD_ENEMY": null
       },
       "Boss": {
         "BOSS_DIST_TO_WARNING": 15.0,
+        "BOSS_DIST_TO_WARNING_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_USEC": 15.0,
+        "BOSS_DIST_TO_WARNING_USEC_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_USEC": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_USEC_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_BEAR": 15.0,
+        "BOSS_DIST_TO_WARNING_BEAR_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_BEAR": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_BEAR_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_OUT": 20.0,
+        "BOSS_DIST_TO_WARNING_OUT_ALLY": 5.0,
         "BOSS_DIST_TO_WARNING_OUT_SQRT": 400.0,
+        "BOSS_DIST_TO_WARNING_OUT_SQRT_ALLY": 25.0,
         "BOSS_DIST_TO_SHOOT": 5.0,
+        "BOSS_DIST_TO_SHOOT_ALLY": 1.0,
         "BOSS_DIST_TO_SHOOT_SQRT": 25.0,
+        "BOSS_DIST_TO_SHOOT_SQRT_ALLY": 1.0,
         "CHANCE_TO_SEND_GRENADE_100": 100.0,
         "MAX_DIST_COVER_BOSS": 25.0,
         "MAX_DIST_COVER_BOSS_SQRT": 625.0,
@@ -2232,13 +2320,15 @@
         "TOTAL_TIME_KILL_AFTER_WARN": 5.0,
         "COME_INSIDE_TIMES": 5,
         "BOSS_DIST_TO_WARNING_OUT_DELTA": 15.0,
+        "BOSS_DIST_TO_WARNING_OUT_DELTA_ALLY": 2.0,
         "TOTAL_TIME_KILL_AFTER_START_WARN": 15.0,
         "BIG_PIPE_ARTILLERY_COUNT": 1,
         "BOSS_ZRYACHIY_TELEPORT_CHANCE": 25.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_TELEPORT": 150.0,
         "BOSS_ZRYACHIY_TELEPORT_CAN_SECONDS_FROM_START": 99999.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_NEXT_COVER": 3.0,
-        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025
+        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025,
+        "NOT_ADD_TO_ENEMY_ON_KILLS": false
       },
       "Core": {
         "VisibleAngle": 180.0,
@@ -2433,8 +2523,10 @@
         "CHECK_HEAD_ANY_DIST": true,
         "MIDDLE_DIST_CAN_SHOOT_HEAD": false,
         "CAN_USE_LIGHT": true,
+        "SHOOT_FROM_EYES": true,
         "ANGLE_FOR_GETUP": 60.0,
-        "MINIMUM_VISIBLE_DIST": 40.0
+        "MINIMUM_VISIBLE_DIST": 40.0,
+        "CAN_USE_STRIBOSCOPE": -1.0
       },
       "Shoot": {
         "RECOIL_TIME_NORMALIZE": 1.0,
@@ -2480,6 +2572,8 @@
         "BLOCK_PERIOD_WHEN_LAY": 1.25,
         "CHANGE_WEAPON_PERIOD": 1.5,
         "USE_MELEE_COMBOS": true,
+        "MELEE_RESET_HIT_TIME": 0.5,
+        "MELEE_STOP_MOVE_DISTANCE": 0.0,
         "VALIDATE_MALFUNCTION_CHANCE": 100,
         "REPAIR_MALFUNCTION_IMMEDIATE_CHANCE": 25,
         "DELAY_BEFORE_EXAMINE_MALFUNCTION": 0.5,
@@ -2497,7 +2591,8 @@
         "LAST_SEEN_TIME_TO_START_SUPPRESS_STATIONARY_AGS": 20.0,
         "STATIONARY_GRENADE_MIN_DIST_TO_TAKE": 20.0,
         "STATIONARY_SIMPLE_MIN_DIST_TO_TAKE": 5.0,
-        "NO_OFFSET_SHOOTING_FROM_PLAYER": false
+        "NO_OFFSET_SHOOTING_FROM_PLAYER": false,
+        "ALTERNATIVE_KNIFE_KICK": false
       },
       "Move": {
         "BASE_ROTATE_SPEED": 270.0,
@@ -2598,7 +2693,8 @@
         "FLASH_HEARING": 1.0,
         "FLASH_ACCURATY": 1.6,
         "FLASH_LAY_CHANCE": 1.0,
-        "STUN_HEARING": 0.01
+        "STUN_HEARING": 0.01,
+        "INVISIBLE_ON_CLIENT": false
       },
       "Cover": {
         "RETURN_TO_ATTACK_AFTER_AMBUSH_MIN": 20.0,
@@ -2690,6 +2786,7 @@
         "RESERVE_OUT_TIME": 60.0,
         "CLOSE_TO_SELECT_RESERV_WAY": 25.0,
         "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER": 5.0,
+        "MAX_YDIST_TO_START_WARN_REQUEST_TO_REQUESTER_ALLY": 4.0,
         "CAN_CHOOSE_RESERV": false,
         "USE_ONLY_RESERV": false,
         "HEAD_PERIOD_TIME": 13.0,
@@ -2712,9 +2809,9 @@
         "USE_SURGIAL_KIT_OVER_THE_BODY_CAHNCE_100": 50.0,
         "USE_SURGIAL_KIT_OVER_THE_BODY_SECOND_CAHNCE_100": 50.0,
         "FOLLOWER_START_MOVE_DELAY": 0.0,
-        "USE_CHACHE_WAYS": false,
+        "USE_CHACHE_WAYS": true,
         "ITEMS_TO_DROP": "",
-        "SPRINT_BETWEEN_CACHED_POINTS": 150.0,
+        "SPRINT_BETWEEN_CACHED_POINTS": 55.0,
         "CHECK_MAGAZIN_PERIOD": 30.0,
         "EAT_DRINK_PERIOD": 30.0,
         "WATCH_SECOND_WEAPON_PERIOD": 30.0,
@@ -2774,10 +2871,7 @@
           "assault"
         ],
         "WARN_BOT_TYPES": [],
-        "ENEMY_BOT_TYPES": [
-          "sptBear",
-          "sptUsec"
-        ],
+        "ENEMY_BOT_TYPES": [],
         "REVENGE_BOT_TYPES": [
           "assault",
           "marksman",
@@ -2798,10 +2892,16 @@
           "bossTagilla",
           "followerTagilla",
           "bossBoar",
+          "bossKolontay",
+          "followerKolontayAssault",
+          "followerKolontaySecurity",
           "bossBoarSniper",
           "followerBoar",
+          "followerBoarClose1",
+          "followerBoarClose2",
           "gifter"
         ],
+        "FOLLOWER_AND_BOSS_WARN_EQUAL_PRIORITY": false,
         "MAX_AGGRO_BOT_DIST_UPPER_LIMIT": 400.0,
         "MAX_AGGRO_BOT_DIST_SQR_UPPER_LIMIT": 40000.0,
         "MAX_AGGRO_BOT_DIST_SQR": 10000.0,
@@ -2884,19 +2984,37 @@
         "CAN_TALK": true,
         "ACTIVE_FORCE_ATTACK_EVENTS": true,
         "ACTIVE_FOLLOW_PLAYER_EVENTS": true,
-        "MAY_BE_CALLED_FOR_HELP": false
+        "MAY_BE_CALLED_FOR_HELP": false,
+        "GIFTER_ADDITIONAL_GIFTS": 0,
+        "ANGLE_TO_SHOOT_BTR": 5.0,
+        "ROTATION_SPEED_BTR": 2.0,
+        "IGNORE_ANOTHER_BOTS_BEING_HIT": false,
+        "AVOID_BTR_RADIUS_SQR": 1600.0,
+        "SNIPER_FIRE_IMMUNE": false,
+        "USE_ADD_TO_ENEMY_VALIDATION": false,
+        "VALID_REASONS_TO_ADD_ENEMY": null
       },
       "Boss": {
         "BOSS_DIST_TO_WARNING": 15.0,
+        "BOSS_DIST_TO_WARNING_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_USEC": 15.0,
+        "BOSS_DIST_TO_WARNING_USEC_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_USEC": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_USEC_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_BEAR": 15.0,
+        "BOSS_DIST_TO_WARNING_BEAR_ALLY": 3.0,
         "BOSS_DIST_TO_WARNING_SQRT_BEAR": 225.0,
+        "BOSS_DIST_TO_WARNING_SQRT_BEAR_ALLY": 9.0,
         "BOSS_DIST_TO_WARNING_OUT": 20.0,
+        "BOSS_DIST_TO_WARNING_OUT_ALLY": 5.0,
         "BOSS_DIST_TO_WARNING_OUT_SQRT": 400.0,
+        "BOSS_DIST_TO_WARNING_OUT_SQRT_ALLY": 25.0,
         "BOSS_DIST_TO_SHOOT": 5.0,
+        "BOSS_DIST_TO_SHOOT_ALLY": 1.0,
         "BOSS_DIST_TO_SHOOT_SQRT": 25.0,
+        "BOSS_DIST_TO_SHOOT_SQRT_ALLY": 1.0,
         "CHANCE_TO_SEND_GRENADE_100": 100.0,
         "MAX_DIST_COVER_BOSS": 25.0,
         "MAX_DIST_COVER_BOSS_SQRT": 625.0,
@@ -2995,13 +3113,15 @@
         "TOTAL_TIME_KILL_AFTER_WARN": 5.0,
         "COME_INSIDE_TIMES": 5,
         "BOSS_DIST_TO_WARNING_OUT_DELTA": 15.0,
+        "BOSS_DIST_TO_WARNING_OUT_DELTA_ALLY": 2.0,
         "TOTAL_TIME_KILL_AFTER_START_WARN": 15.0,
         "BIG_PIPE_ARTILLERY_COUNT": 1,
         "BOSS_ZRYACHIY_TELEPORT_CHANCE": 25.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_TELEPORT": 150.0,
         "BOSS_ZRYACHIY_TELEPORT_CAN_SECONDS_FROM_START": 99999.0,
         "BOSS_ZRYACHIY_MIN_DIST_TO_NEXT_COVER": 3.0,
-        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025
+        "BOSS_ZRYACHIY_POSSIBLE_FOG": 0.025,
+        "NOT_ADD_TO_ENEMY_ON_KILLS": false
       },
       "Core": {
         "VisibleAngle": 180.0,
