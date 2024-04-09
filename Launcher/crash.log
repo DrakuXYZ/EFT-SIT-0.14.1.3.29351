@@ -1,0 +1,22 @@
+System.ArgumentException: Version string portion was too short or too long. (Parameter 'input')
+   at System.Version.ParseVersion(ReadOnlySpan`1 input, Boolean throwOnFailure)
+   at System.Version.Parse(String input)
+   at System.Version..ctor(String version)
+   at SIT.Manager.ViewModels.PlayPageViewModel.ConnectToServer(Boolean launchServer) in C:\Users\nagai\Desktop\Tarkov\Development\SIT.Manager.Avalonia\SIT.Manager\ViewModels\PlayPageViewModel.cs:line 344
+   at SIT.Manager.ViewModels.PlayPageViewModel.<.ctor>b__21_1() in C:\Users\nagai\Desktop\Tarkov\Development\SIT.Manager.Avalonia\SIT.Manager\ViewModels\PlayPageViewModel.cs:line 88
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at Avalonia.Threading.SendOrPostCallbackDispatcherOperation.InvokeCore()
+   at Avalonia.Threading.DispatcherOperation.Execute()
+   at Avalonia.Threading.Dispatcher.ExecuteJob(DispatcherOperation job)
+   at Avalonia.Threading.Dispatcher.ExecuteJobsCore(Boolean fromExplicitBackgroundProcessingCallback)
+   at Avalonia.Threading.Dispatcher.Signaled()
+   at Avalonia.Win32.Win32Platform.WndProc(IntPtr hWnd, UInt32 msg, IntPtr wParam, IntPtr lParam)
+   at Avalonia.Win32.Interop.UnmanagedMethods.DispatchMessage(MSG& lpmsg)
+   at Avalonia.Win32.Win32DispatcherImpl.RunLoop(CancellationToken cancellationToken)
+   at Avalonia.Threading.DispatcherFrame.Run(IControlledDispatcherImpl impl)
+   at Avalonia.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at Avalonia.Threading.Dispatcher.MainLoop(CancellationToken cancellationToken)
+   at Avalonia.Controls.ApplicationLifetimes.ClassicDesktopStyleApplicationLifetime.Start(String[] args)
+   at Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime(AppBuilder builder, String[] args, Action`1 lifetimeBuilder)
+   at SIT.Manager.Desktop.Program.Main(String[] args) in C:\Users\nagai\Desktop\Tarkov\Development\SIT.Manager.Avalonia\SIT.Manager.Desktop\Program.cs:line 21
