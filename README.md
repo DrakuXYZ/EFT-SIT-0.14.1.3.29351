@@ -1,11 +1,4 @@
-<a name="readme-top"></a>
 
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/stayintarkov/StayInTarkov.Client">
-    <img src="Assets/sit-logo-5.png" alt="Logo" height="240">
-  </a>
 
 <!DOCTYPE html>
 <html>
