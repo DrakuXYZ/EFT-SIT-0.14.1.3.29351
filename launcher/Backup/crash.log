@@ -1,0 +1,41 @@
+System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (127.0.0.1:6969)
+ ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at SIT.Manager.Services.AkiServerRequestingService.<>c__DisplayClass7_0.<<SendAsync>b__0>d.MoveNext() in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/AkiServerRequestingService.cs:line 58
+--- End of stack trace from previous location ---
+   at Polly.ResiliencePipeline.<>c__10`1.<<ExecuteAsync>b__10_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Outcome`1.GetResultOrRethrow()
+   at Polly.ResiliencePipeline.ExecuteAsync[TResult](Func`2 callback, CancellationToken cancellationToken)
+   at SIT.Manager.Services.AkiServerRequestingService.SendAsync(Uri remoteAddress, String path, HttpMethod method, String data, ResiliencePipeline`1 strategy, CancellationToken cancellationToken) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/AkiServerRequestingService.cs:line 41
+   at SIT.Manager.Services.AkiServerRequestingService.GetAkiServerInfoAsync(AkiServer server, CancellationToken cancellationToken) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/AkiServerRequestingService.cs:line 170
+   at SIT.Manager.Services.ManagedProcesses.TarkovClientService.CreateCharacter(AkiServer server, String username, String password, Boolean rememberLogin) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/ManagedProcesses/TarkovClientService.cs:line 284
+   at SIT.Manager.Services.ManagedProcesses.TarkovClientService.CreateCharacter(AkiServer server) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/ManagedProcesses/TarkovClientService.cs:line 334
+   at SIT.Manager.ViewModels.Play.CharacterSelectionViewModel.CreateCharacter() in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/ViewModels/Play/CharacterSelectionViewModel.cs:line 86
+   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   at Avalonia.Threading.SendOrPostCallbackDispatcherOperation.InvokeCore()
+   at Avalonia.Threading.DispatcherOperation.Execute()
+   at Avalonia.Threading.Dispatcher.ExecuteJob(DispatcherOperation job)
+   at Avalonia.Threading.Dispatcher.ExecuteJobsCore(Boolean fromExplicitBackgroundProcessingCallback)
+   at Avalonia.Threading.Dispatcher.Signaled()
+   at Avalonia.Win32.Win32Platform.WndProc(IntPtr hWnd, UInt32 msg, IntPtr wParam, IntPtr lParam)
+   at Avalonia.Win32.Interop.UnmanagedMethods.DispatchMessage(MSG& lpmsg)
+   at Avalonia.Win32.Win32DispatcherImpl.RunLoop(CancellationToken cancellationToken)
+   at Avalonia.Threading.DispatcherFrame.Run(IControlledDispatcherImpl impl)
+   at Avalonia.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   at Avalonia.Threading.Dispatcher.MainLoop(CancellationToken cancellationToken)
+   at Avalonia.Controls.ApplicationLifetimes.ClassicDesktopStyleApplicationLifetime.Start(String[] args)
+   at Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions.StartWithClassicDesktopLifetime(AppBuilder builder, String[] args, Action`1 lifetimeBuilder)
+   at SIT.Manager.Desktop.Program.Main(String[] args) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager.Desktop/Program.cs:line 20
