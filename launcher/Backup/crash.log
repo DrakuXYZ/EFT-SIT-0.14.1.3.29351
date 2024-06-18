@@ -1,35 +1,39 @@
-System.Net.Http.HttpRequestException: Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение. (127.0.0.1:6969)
- ---> System.Net.Sockets.SocketException (10061): Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
-   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
-   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
-   --- End of inner exception stack trace ---
-   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
-   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
-   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
-   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
-   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
-   at SIT.Manager.Services.AkiServerRequestingService.<>c__DisplayClass7_0.<<SendAsync>b__0>d.MoveNext() in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/AkiServerRequestingService.cs:line 58
---- End of stack trace from previous location ---
-   at Polly.ResiliencePipeline.<>c__10`1.<<ExecuteAsync>b__10_0>d.MoveNext()
---- End of stack trace from previous location ---
-   at Polly.Outcome`1.GetResultOrRethrow()
-   at Polly.ResiliencePipeline.ExecuteAsync[TResult](Func`2 callback, CancellationToken cancellationToken)
-   at SIT.Manager.Services.AkiServerRequestingService.SendAsync(Uri remoteAddress, String path, HttpMethod method, String data, ResiliencePipeline`1 strategy, CancellationToken cancellationToken) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/AkiServerRequestingService.cs:line 41
-   at SIT.Manager.Services.AkiServerRequestingService.GetAkiServerInfoAsync(AkiServer server, CancellationToken cancellationToken) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/AkiServerRequestingService.cs:line 170
-   at SIT.Manager.Services.ManagedProcesses.TarkovClientService.CreateCharacter(AkiServer server, String username, String password, Boolean rememberLogin) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/ManagedProcesses/TarkovClientService.cs:line 284
-   at SIT.Manager.Services.ManagedProcesses.TarkovClientService.CreateCharacter(AkiServer server) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/ManagedProcesses/TarkovClientService.cs:line 334
-   at SIT.Manager.ViewModels.Play.CharacterSelectionViewModel.CreateCharacter() in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/ViewModels/Play/CharacterSelectionViewModel.cs:line 86
-   at CommunityToolkit.Mvvm.Input.AsyncRelayCommand.AwaitAndThrowIfFailed(Task executionTask)
+System.IO.IOException: The process cannot access the file 'Y:\EFT.014\launcher\Cache\0x7b2029085fb1cbd3d8fa70ebad514d00' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.File.OpenWrite(String path)
+   at SIT.Manager.Services.Caching.OnDiskCachingProvider.Add[T](String key, T value, Nullable`1 expiryTime) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/Caching/OnDiskCachingProvider.cs:line 47
+   at SIT.Manager.Services.Caching.CachingProviderBase.GetOrCompute[T](String key, Func`2 computor, Nullable`1 expiryTime) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Services/Caching/CachingProviderBase.cs:line 128
+   at SIT.Manager.ViewModels.PlayPageViewModel..ctor(ICachingService cachingService) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/ViewModels/PlayPageViewModel.cs:line 34
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at SIT.Manager.Views.PlayPage..ctor() in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/Views/PlayPage.axaml.cs:line 12
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at SIT.Manager.ViewModels.MainViewModel.NavigateToPage(Type page) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/ViewModels/MainViewModel.cs:line 227
+   at SIT.Manager.ViewModels.MainViewModel.OnPropertyChanged(PropertyChangedEventArgs e) in /home/runner/work/SIT.Manager.Avalonia/SIT.Manager.Avalonia/SIT.Manager/ViewModels/MainViewModel.cs:line 316
    at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
    at Avalonia.Threading.SendOrPostCallbackDispatcherOperation.InvokeCore()
    at Avalonia.Threading.DispatcherOperation.Execute()
    at Avalonia.Threading.Dispatcher.ExecuteJob(DispatcherOperation job)
    at Avalonia.Threading.Dispatcher.ExecuteJobsCore(Boolean fromExplicitBackgroundProcessingCallback)
    at Avalonia.Threading.Dispatcher.Signaled()
+   at Avalonia.Win32.Win32DispatcherImpl.DispatchWorkItem()
    at Avalonia.Win32.Win32Platform.WndProc(IntPtr hWnd, UInt32 msg, IntPtr wParam, IntPtr lParam)
    at Avalonia.Win32.Interop.UnmanagedMethods.DispatchMessage(MSG& lpmsg)
    at Avalonia.Win32.Win32DispatcherImpl.RunLoop(CancellationToken cancellationToken)
