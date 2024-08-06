@@ -134,7 +134,7 @@
 <body>
 <p style="text-align: center; ">
 <span style="font-size:22pt">
-<b> SIT мод и ссылки на источники.</b>
+<b> Project Fika и ссылки на другие источники.</b>
 </span>
 </p>
 </body>
@@ -143,6 +143,6 @@
 
 
 
-- [Stay In Tarkov](https://github.com/stayintarkov/StayInTarkov.Client)
-- [SPT-AKI](https://sp-tarkov.com/)
+- [Project Fika](https://discord.gg/project-fika)
+- [SPT](https://sp-tarkov.com/)
 - [Escape From Tarkov](https://www.escapefromtarkov.com/?lang=ru)
